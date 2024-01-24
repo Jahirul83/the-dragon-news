@@ -1,4 +1,4 @@
-import { Box, Button, Container, IconButton, Stack } from '@mui/material';
+import { Box, Button, Container, IconButton, Stack, Typography } from '@mui/material';
 // icons
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -67,6 +67,9 @@ const Footer = () => {
                         </Link>
                     ))}
                 </Box>
+                <Typography variant='body2' color="gray" textAlign="center">
+                    @2024 The dragon news. Design By Jumman
+                </Typography>
             </Container>
         </Box >
     );
