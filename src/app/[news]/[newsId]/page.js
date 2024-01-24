@@ -1,5 +1,5 @@
 import { getSingleNews } from "@/utils/getSingleNews";
-import { Box, Container, Grid } from "@mui/material";
+import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 
 const NewsDetailPage = async ({ params }) => {
@@ -21,9 +21,37 @@ const NewsDetailPage = async ({ params }) => {
                         </Grid>
                     </Grid>
                     <Grid item lg={6}>
-                        <h1>
-                            Details
-                        </h1>
+                        <Typography variant="h5" component="h2">
+                            {news.title}
+                        </Typography>
+                        <Box sx={{
+                            display: "flex",
+                            gap: 3,
+                            alignItems: "center",
+                        }}>
+                            <Avatar alt="author" src={news.author.img} />
+                            <Typography>
+                                By {news.author.name}
+                            </Typography>
+                            <Typography>
+                                Publish: {news.author.published_date}
+                            </Typography>
+                        </Box>
+                        <Typography style={
+                            {
+                                textAlign: "justify",
+                                whiteSpace: "pre-line",
+                                margin: "10px 0px",
+                                color: "gray"
+                            }
+                        }>
+                            {news.details}
+                        </Typography>
+                        <Typography variant="h6">
+                            ``Many desktop publishing packages and web page editors now use as
+                            their default model text!``
+                        </Typography>
+                        <Typography variant="h6">-ABC</Typography>
                     </Grid>
                 </Grid>
             </Container>
